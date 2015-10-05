@@ -1,3 +1,6 @@
+import copy
+
+
 class ChessChallenge(object):
 
     """Builds chessboards and outputs them.
@@ -7,7 +10,7 @@ class ChessChallenge(object):
         self.valid_boards = []
         self.width = width
         self.height = height
-        self.pieces = pieces
+        self.original_pieces = copy.copy(pieces)
         self._place_pieces(pieces)
 
     def _place_pieces(self, pieces, board=None, unavailable_positions=None):
